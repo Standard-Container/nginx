@@ -21,7 +21,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: main
           submodules: true # 检出子模块
 
       - name: Set up QEMU

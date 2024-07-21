@@ -38,14 +38,7 @@ jobs:
           docker info
           docker buildx version
           docker buildx create --use
-          docker buildx build \
-          --file ./Dockerfile \
-          --platform ${{ matrix.platform }} \
-          --tag ${{ github.event.repository.name }}:${{ github.ref_name }}-${{ matrix.arch }} \
-          --output type=docker,dest=${{ github.event.repository.name }}-${{ matrix.arch }}.tar \
-          --no-cache \
-          --pull \
-          .
+          docker buildx build --file ./Dockerfile --platform ${{ matrix.platform }} --tag ${{ github.event.repository.name }}:${{ github.ref_name }}-${{ matrix.arch }} --output type=docker,dest=${{ github.event.repository.name }}-${{ matrix.arch }}.tar --no-cache --pull .
           ls -lh ${{ github.event.repository.name }}-${{ matrix.arch }}.tar
 
 #      - name: Build Docker image

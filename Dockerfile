@@ -37,7 +37,7 @@ RUN make -j$(nproc) && make install
 FROM alpine:3.20
 
 # 设置必要的运行时依赖
-RUN apk add --no-cache pcre2 gd
+RUN apk add --no-cache pcre2 gd geoip
 
 # 从 builder 镜像复制编译好的 Nginx 到最终镜像
 COPY --from=builder /usr/local/nginx /usr/local/nginx

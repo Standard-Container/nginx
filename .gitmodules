@@ -1,3 +1,6 @@
 [submodule "modules/nginx"]
 	path = modules/nginx
 	url = https://github.com/nginx/nginx.git
+[submodule "modules/ngx_brotli"]
+	path = modules/ngx_brotli
+	url = https://github.com/google/ngx_brotli.git
